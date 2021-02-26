@@ -19,60 +19,40 @@ LoveCSharpQuestion();
 SecretQuestion();
 }
 
-
-
+// question to ask / answer if y / answer if n
 void CanadaQuestion()
 {
-    bool isTrue = MooseAsks("Is Canada real?");
-    if (isTrue)
-    {
-        MooseSays("Really? It seems very unlikely.");
-    }
-    else
-    {
-        MooseSays("I  K N E W  I T !!!");
-    }
+    Question("Is Canada real?", "Really? It seems very unlikely.", "I  K N E W  I T!!!");
 }
 
 void EnthusiasticQuestion()
 {
-    bool isEnthusiastic = MooseAsks("Are you enthusiastic?");
-    if (isEnthusiastic)
-    {
-        MooseSays("Yay!");
-    }
-    else
-    {
-        MooseSays("You should try it!");
-    }
+    Question("Are you enthusiastic?", "Yay!", "You should try it!");
 }
 
 void LoveCSharpQuestion()
 {
-    bool doesLoveCSharp = MooseAsks("Do you love C# yet?");
-    if (doesLoveCSharp)
-    {
-        MooseSays("Good job sucking up to your instructor!");
-    }
-    else
-    {
-        MooseSays("You will...oh, yes, you will...");
-    }
+    Question("Do you love C# yet?", "Good job sucking up to your instructor!", "You will...oh, yes, you will...");
 }
 
 void SecretQuestion()
 {
-    bool wantsSecret = MooseAsks("Do you want to know a secret?");
-    if (wantsSecret)
+    Question("Do you want to know a secret?", "ME TOO!!!! I love secrets...tell me one!", "Oh, no...secrets are the best, I love to share them!");
+}
+
+// based on the question asked... if true sayTrue / else sayFalse
+void Question(string ask, string sayTrue, string sayFalse)
+{
+    bool isTrue = MooseAsks($"{ask}");
+    if (isTrue)
     {
-        MooseSays("ME TOO!!!! I love secrets...tell me one!");
+        MooseSays($"{sayTrue}");
     }
     else
     {
-        MooseSays("Oh, no...secrets are the best, I love to share them!");
+        MooseSays($"{sayFalse}");
     }
-}
-
+};
 
 bool MooseAsks(string question)
 {
